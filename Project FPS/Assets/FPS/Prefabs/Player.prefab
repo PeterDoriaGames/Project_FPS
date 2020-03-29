@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 4205022973215787166}
   - component: {fileID: 1272397862697293493}
   - component: {fileID: 1661717823}
+  - component: {fileID: 2729281214152228922}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -392,13 +393,13 @@ MonoBehaviour:
   maxSpeedOnGround: 13
   movementSharpnessOnGround: 15
   maxSpeedCrouchedRatio: 0.5
-  maxSpeedInAir: 10
+  maxSpeedInAir: 15
   accelerationSpeedInAir: 25
-  sprintSpeedModifier: 1.5
+  sprintSpeedModifier: 1
   killHeight: -50
   rotationSpeed: 200
   aimingRotationMultiplier: 0.4
-  jumpForce: 9
+  jumpForce: 8
   cameraHeightRatio: 0.8
   capsuleHeightStanding: 1.8
   capsuleHeightCrouching: 0.9
@@ -441,13 +442,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingWeapons:
-  - {fileID: 8323776800172828795, guid: b318fabc73446b746a1005cede0c4ceb, type: 3}
+  - {fileID: 8323776800172828795, guid: 31d97e822763d1f4cb769f7e3f7f7333, type: 3}
   weaponCamera: {fileID: 2286125971047457827}
   weaponParentSocket: {fileID: 3891163784698469781}
   defaultWeaponPosition: {fileID: 4354021110288562838}
   aimingWeaponPosition: {fileID: 6033319682454824337}
   downWeaponPosition: {fileID: 2050759424792167117}
-  bobFrequency: 10
+  bobFrequency: 11
   bobSharpness: 10
   defaultBobAmount: 0.05
   aimingBobAmount: 0.02
@@ -725,6 +726,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2729281214152228922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7253983127304857660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8534e17a0f90604c9afd4f5c73d829f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Id: d1aa7706-eb0c-4e95-9b38-634c8ca7d17d
 --- !u!1 &7383874627095517793
 GameObject:
   m_ObjectHideFlags: 0

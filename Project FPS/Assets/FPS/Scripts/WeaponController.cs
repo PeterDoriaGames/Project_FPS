@@ -163,9 +163,11 @@ public class WeaponController : MonoBehaviour
     {
         if (isCharging)
         {
+            print("cur Charge" + currentCharge);
             if (currentCharge < 1f)
             {
                 float chargeLeft = 1f - currentCharge;
+                print("isCharging" + " charge left: " + chargeLeft);
 
                 // Calculate how much charge ratio to add this frame
                 float chargeAdded = 0f;
@@ -191,6 +193,11 @@ public class WeaponController : MonoBehaviour
                     currentCharge = Mathf.Clamp01(currentCharge + chargeAdded);
                 }
             }
+            else 
+            { 
+            
+            }
+
         }
     }
 

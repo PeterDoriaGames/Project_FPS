@@ -10,10 +10,17 @@ public class DetectionModule : MonoBehaviour
     public float detectionRange = 20f;
     [Tooltip("The max distance at which the enemy can attack its target")]
     public float attackRange = 10f;
+    [Tooltip("Min attack range player needs to exceed. If player is closer than this, then enemy cannot attack them.")]
+    public float minAttackRange = 1f;
     [Tooltip("Time before an enemy abandons a known target that it can't see anymore")]
     public float knownTargetTimeout = 4f;
+    [Tooltip("Max angle from enemy's forward axis where they can attack")]
+    public float maxAngleOfAttack = 30f;
+
+
     [Tooltip("Optional animator for OnShoot animations")]
     public Animator animator;
+    
 
     public UnityAction onDetectedTarget;
     public UnityAction onLostTarget;
@@ -73,19 +80,25 @@ public class DetectionModule : MonoBehaviour
                     {
                         Actor hitActor = closestValidHit.collider.GetComponentInParent<Actor>();
                         if (hitActor == otherActor)
-                        {
+                        {                    
+                            
                             isSeeingTarget = true;
                             closestSqrDistance = sqrDistance;
 
                             m_TimeLastSeenTarget = Time.time;
                             knownDetectedTarget = otherActor.aimPoint.gameObject;
+                            
                         }
                     }
                 }
             }
         }
 
-        isTargetInAttackRange = knownDetectedTarget != null && Vector3.Distance(transform.position, knownDetectedTarget.transform.position) <= attackRange;
+        // if this is true -> the target is detected, within min/max attack range, and within the angle of attack
+        isTargetInAttackRange = knownDetectedTarget != null
+            && Vector3.Distance(transform.position, knownDetectedTarget.transform.position) <= attackRange 
+            && Vector3.Distance(transform.position, knownDetectedTarget.transform.position) >= minAttackRange 
+            && Mathf.Abs(Vector3.Angle(actor.transform.forward, knownDetectedTarget.transform.position - actor.transform.position)) < maxAngleOfAttack;
 
         // Detection events
         if (!hadKnownTarget &&
