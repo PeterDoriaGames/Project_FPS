@@ -69,7 +69,7 @@ MonoBehaviour:
   hittableLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  speed: 80
+  speed: 40
   gravityDownAcceleration: 0
   trajectoryCorrectionDistance: 5
   inheritWeaponVelocity: 0
