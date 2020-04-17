@@ -393,8 +393,8 @@ MonoBehaviour:
   maxSpeedOnGround: 13
   movementSharpnessOnGround: 15
   maxSpeedCrouchedRatio: 0.5
-  maxSpeedInAir: 15
-  accelerationSpeedInAir: 25
+  maxSpeedInAir: 10
+  accelerationSpeedInAir: 20
   sprintSpeedModifier: 1
   killHeight: -50
   rotationSpeed: 200
@@ -481,10 +481,10 @@ MonoBehaviour:
   isJetpackUnlockedAtStart: 0
   jetpackAcceleration: 8
   jetpackDownwardVelocityCancelingFactor: 1
-  consumeDuration: 1.5
-  refillDurationGrounded: 2
-  refillDurationInTheAir: 5
-  refillDelay: 1
+  consumeDuration: 0.3
+  refillDurationGrounded: 0.3
+  refillDurationInTheAir: 10
+  refillDelay: 0.1
   jetpackSFX: {fileID: 8300000, guid: 01a15bd1861d7914abbedc36aad1f4d6, type: 3}
 --- !u!143 &3122855503829242450
 CharacterController:
@@ -499,7 +499,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1.8
   m_Radius: 0.35
-  m_SlopeLimit: 45
+  m_SlopeLimit: 70
   m_StepOffset: 0.3
   m_SkinWidth: 0.001
   m_MinMoveDistance: 0
