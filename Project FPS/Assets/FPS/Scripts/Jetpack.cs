@@ -65,6 +65,7 @@ public class Jetpack : MonoBehaviour
     void Update()
     {
         // jetpack can only be used if not grounded and jump has been pressed again once in-air
+        // PD 4/19/2020 - Refill should only happen when player is grounded. 
         if(isPlayergrounded())
         {
             m_CanUseJetpack = false;
@@ -110,7 +111,7 @@ public class Jetpack : MonoBehaviour
         else
         {
             // refill the meter over time
-            if (isJetpackUnlocked && Time.time - m_LastTimeOfUse >= refillDelay)
+            if (isJetpackUnlocked && Time.time - m_LastTimeOfUse >= refillDelay && isPlayergrounded())
             {
                 float refillRate = 1 / (m_PlayerCharacterController.isGrounded ? refillDurationGrounded : refillDurationInTheAir);
                 currentFillRatio = currentFillRatio + Time.deltaTime * refillRate;
