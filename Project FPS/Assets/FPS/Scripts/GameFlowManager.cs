@@ -33,6 +33,7 @@ public class GameFlowManager : MonoBehaviour
     ObjectiveManager m_ObjectiveManager;
     float m_TimeLoadEndGameScene;
     string m_SceneToLoad;
+    bool _levelComplete = false;
 
     void Start()
     {
@@ -63,7 +64,10 @@ public class GameFlowManager : MonoBehaviour
         }
         else
         {
-            if (m_ObjectiveManager.AreAllObjectivesCompleted())
+            //if (m_ObjectiveManager.AreAllObjectivesCompleted())
+            //    EndGame(true);
+
+            if (_levelComplete)
                 EndGame(true);
 
             // Test if player died
@@ -106,5 +110,10 @@ public class GameFlowManager : MonoBehaviour
             m_SceneToLoad = loseSceneName;
             m_TimeLoadEndGameScene = Time.time + endSceneLoadDelay;
         }
+    }
+
+    public void SetLevelComplete(bool isComplete)
+    {
+        _levelComplete = isComplete;
     }
 }

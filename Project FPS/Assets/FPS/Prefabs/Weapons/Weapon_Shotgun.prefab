@@ -163,8 +163,8 @@ MonoBehaviour:
   recoilForce: 1.5
   aimZoomRatio: 0.7
   aimOffset: {x: 0, y: 0.13, z: 0}
-  ammoReloadRate: 1.1
-  ammoReloadDelay: 1
+  ammoReloadRate: 1.5
+  ammoReloadDelay: 0.5
   maxAmmo: 3
   automaticReleaseOnCharged: 0
   maxChargeDuration: 1
@@ -988,7 +988,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 011763291d1bfed4aaaf1719a71df141, type: 2}
-  - {fileID: 2100000, guid: 4427ba4d0feb17e499226c8bdccb35a5, type: 2}
+  - {fileID: 2100000, guid: 9ae6d1cb1fd13ec4e956f81a56ceccfb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

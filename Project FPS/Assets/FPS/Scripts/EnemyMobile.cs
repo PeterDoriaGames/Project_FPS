@@ -79,6 +79,7 @@ public class EnemyMobile : MonoBehaviour
                 {
                     aiState = AIState.Attack;
                     m_EnemyController.SetNavDestination(transform.position);
+                    
                 }
                 break;
             case AIState.Attack:

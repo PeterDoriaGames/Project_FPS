@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
-
+/// <summary>
+/// TO-DO?: 
+///     Double-Jump/Triple-Jump instead of standard jetpack?
+///     Dash
+///     Boost at end of losing jetpack energy
+/// </summary>
 [RequireComponent(typeof(AudioSource))]
 public class Jetpack : MonoBehaviour
 {
@@ -23,11 +28,11 @@ public class Jetpack : MonoBehaviour
     [Tooltip("Time it takes to consume all the jetpack fuel")]
     public float consumeDuration = 1.5f;
     [Tooltip("Time it takes to completely refill the jetpack while on the ground")]
-    public float refillDurationGrounded = 2f;
+    public float refillDurationGrounded = 0.2f;
     [Tooltip("Time it takes to completely refill the jetpack while in the air")]
-    public float refillDurationInTheAir = 5f;
+    public float refillDurationInTheAir = 1000f;
     [Tooltip("Delay after last use before starting to refill")]
-    public float refillDelay = 1f;
+    public float refillDelay = 0f;
 
     [Header("Audio")]
     [Tooltip("Sound played when using the jetpack")]

@@ -305,6 +305,14 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    public void WarpToDestination(Vector3 destination)
+    {
+        if (m_NavMeshAgent)
+        {
+
+        }
+    }
+
     public void UpdatePathDestination(bool inverseOrder = false)
     {
         if (IsPathValid())
